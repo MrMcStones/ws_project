@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TodoAppApplicationTests {
 
+	// Detta test kontrollerar att applikationen kan starta utan fel
 	@Test
 	void contextLoads() {
 	}
