@@ -2,15 +2,16 @@ package com.rasmus.ws_project.ws_project.model;
 
 import jakarta.persistence.*;
 
+// Representerar en 2Do databasen
 @Entity
 public class TodoItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // 2Do ID
 
-    private String title;
-    private boolean completed;
+    private String title; // 2Do Titel
+    private boolean completed; // 2Do Status
 
     // Getters och Setters
     public Long getId() {

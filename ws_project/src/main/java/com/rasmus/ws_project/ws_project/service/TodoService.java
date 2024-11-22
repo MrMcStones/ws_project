@@ -12,18 +12,22 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
 
+    // Konstruktor för att injicera repository-lagret
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
 
+    // Hämta alla 2Do's från databasen
     public List<TodoItem> getAllTodos() {
         return todoRepository.findAll();
     }
 
+    // Skapa en ny 2Do
     public TodoItem createTodo(TodoItem todoItem) {
         return todoRepository.save(todoItem);
     }
 
+    // Uppdatera en 2Do
     public TodoItem updateTodo(Long id, TodoItem updatedTodo) {
         return todoRepository.findById(id)
                 .map(existingTodo -> {
@@ -34,6 +38,7 @@ public class TodoService {
                 .orElseThrow(() -> new ResourceNotFoundException("Todo not found with id " + id));
     }
 
+    // Ta bort en 2Do
     public void deleteTodo(Long id) {
         if (!todoRepository.existsById(id)) {
             throw new ResourceNotFoundException("Todo not found with id " + id);
