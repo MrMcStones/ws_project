@@ -1,4 +1,7 @@
 package com.rasmus.ws_project.ws_project.repository;
 
-public class TodoRepository {
+import com.rasmus.ws_project.ws_project.model.TodoItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TodoRepository extends JpaRepository<TodoItem, Long> {
 }
